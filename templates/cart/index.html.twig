@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CartController!{% endblock %}
+{% block title %}Panier{% endblock %}
 
 {% block content %}
     {% set total = null %}
@@ -32,7 +32,7 @@
                     <td>
                         <a href="{{path('app_decrease_to_cart', {'id' : product.product.id})}}"><img src="assets/img/minus.png" alt="" height="12px"></a>
                         <strong class="ml-1 mr-1"> x {{product.quantity}}</strong>
-                        <a href="{{path('app_add_to_cart', {'id' : product.product.id})}}"><img src="assets/img/plus.png" alt="" height="12px"></a>
+                        <a href="{{path('app_add_to_cart', {'id' : product.product.id})}}"><img src="assets/img/plus.png" alt="" height="20px"></a>
                     </td>
                     <td>{{(product.product.price / 100) | number_format(2, ',', '.')  }} £</td>
                     <td>{{((product.product.price * product.quantity) /100) | number_format(2, ',', '.') }} £

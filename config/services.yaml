@@ -6,6 +6,13 @@
 parameters:
     api_key: '%env(MAILJET_KEY)%'
     api_secret: '%env(MAILJET_SECRET)%'
+    dust_api_key: '%env(DUST_KEY)%'
+    dust_id: '%env(DUST_ID)%'
+    dust_conversation_id: '%env(DUST_CONVERSATION_ID)%'
+    dust_domain: '%env(DUST_DOMAIN)%'
+    dust_username: '%env(DUST_USERNAME)%'
+    dust_fullname: '%env(DUST_FULLNAME)%'
+    dust_email: '%env(DUST_EMAIL)%'
 
 services:
     # default configuration for services in *this* file

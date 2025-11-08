@@ -18,7 +18,7 @@ class StripeController extends AbstractController
     {
         $product_for_stripe = [];
         $YOUR_DOMAIN = $_ENV["DOMAIN_NAME"];
-
+        
         $order = $manager->getRepository(Order::class)->findOneByReference($reference);
         if (!$order) {
             return $this->json(['error' => 'order']);

@@ -60,7 +60,7 @@
 
 {% block script %}
     <script type="text/javascript">
-        var stripe = Stripe("{{stripe_key}}");
+        var stripe = Stripe({{ stripe_key|json_encode|raw }});
         var checkoutButton = document.getElementById("checkout-button");
         var reference = "{{ reference }}";
         var url = "/commande/create/session/{{reference}}";
@@ -73,7 +73,7 @@
                 })
                 .then(function (session) {
                     if(session.error=='order'){
-                        windows.location.replace('{{path('app_order')}}')
+                        window.location.replace('{{path('app_order')}}')
                     } else {
                         return stripe.redirectToCheckout({ sessionId: session.id });
                     }
